@@ -2,6 +2,10 @@ using System;
 
 namespace Labaoop
 {
+    interface IEngineering
+    {
+        void ESolution(); 
+    }
     abstract class AbstractCalc
     {
         public abstract void Summa();
@@ -9,14 +13,14 @@ namespace Labaoop
         public abstract void Division();
         public abstract void Multiplication();
     }
-    class Standart : AbstractCalc
+    class Standart:AbstractCalc
     {
         public double a { get; set; }
         public double b { get; set; }
         public string c { get; set; }
 
         public override void Summa()
-        {
+        { 
             Console.WriteLine(a + b);
         }
         public override void Difference()
@@ -46,7 +50,7 @@ namespace Labaoop
         }
 
     }
-    class Engineering : Standart
+    class Engineering : Standart,IEngineering
     {
         public double start { get; set; }
         public double step { get; set; }
