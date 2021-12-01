@@ -2,27 +2,33 @@ using System;
 
 namespace Labaoop
 {
-
-    class Standart
+    abstract class AbstractCalc
+    {
+        public abstract void Summa();
+        public abstract void Difference();
+        public abstract void Division();
+        public abstract void Multiplication();
+    }
+    class Standart : AbstractCalc
     {
         public double a { get; set; }
         public double b { get; set; }
         public string c { get; set; }
 
-        public void Summa()
+        public override void Summa()
         {
             Console.WriteLine(a + b);
         }
-        public void Difference()
+        public override void Difference()
         {
             Console.WriteLine(a - b);
         }
-        public void Division()
+        public override void Division()
         {
             if (b != 0) Console.WriteLine(a / b);
             else Zero();
         }
-        public void Multiplication()
+        public override void Multiplication()
         {
             Console.WriteLine(a * b);
         }
@@ -45,7 +51,7 @@ namespace Labaoop
         public double start { get; set; }
         public double step { get; set; }
         public int count { get; set; }
-       public void ESolution()
+        public void ESolution()
         {
             if (-5 <= start && start <= 5)
             {
